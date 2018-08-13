@@ -1,0 +1,23 @@
+input,
+textarea {
+	border 				: 1px solid $light_med_gray;
+	border-radius 		: 3px;
+	padding 			: 3px;
+
+	&:focus {
+		border-color 	: $light_med_gray;
+		outline-color 	: $med_gray;
+	}
+}
+
+textarea {
+	width 		: 100%;
+}
+
+select {
+	-webkit-appearance 	: none;
+	-moz-appearance 	: none;
+	appearance 			: none;
+	border 				: 0;
+	padding 			: 0.1em 0.5em;
+}

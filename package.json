@@ -1,0 +1,45 @@
+{
+  "name": "dunn",
+  "version": "1.0.0",
+  "description": "[![Build Status](https://travis-ci.org/Automattic/_s.svg?branch=master)](https://travis-ci.org/Automattic/_s)",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/dccmarketing/dunn-2018.git"
+  },
+  "author": "dccmarketing",
+  "license": "GPL-2.0",
+  "bugs": {
+    "url": "https://github.com/dccmarketing/dunn-2018/issues"
+  },
+  "homepage": "https://github.com/dccmarketing/dunn-2018#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "browser-sync": "^2.24.6",
+    "event-stream": "^3.3.4",
+    "fs": "0.0.1-security",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^5.0.0",
+    "gulp-clean-css": "^3.10.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-filter": "^5.1.0",
+    "gulp-imagemin": "^4.1.0",
+    "gulp-load-plugins": "^1.5.0",
+    "gulp-notify": "^3.2.0",
+    "gulp-parker": "^0.1.6",
+    "gulp-plumber": "^1.2.0",
+    "gulp-rename": "^1.4.0",
+    "gulp-sass": "^4.0.1",
+    "gulp-size": "^3.0.0",
+    "gulp-sort": "^2.0.0",
+    "gulp-sourcemaps": "^2.6.4",
+    "gulp-svgmin": "^1.2.4",
+    "gulp-uglify-es": "^1.0.4",
+    "gulp-util": "^3.0.8",
+    "gulp-wp-pot": "^2.3.2",
+    "path": "^0.12.7"
+  }
+}
