@@ -1,6 +1,6 @@
 .menu-1-items-0 {
 	@include tablet-to-laptop {
-		background-color: $bg__tablet-menu;
+		background-color: $med_gray;
 		overflow 		: auto;
 		transition 		: transform 0.4s ease;
 		z-index 		: 9999;

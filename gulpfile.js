@@ -28,12 +28,12 @@
  */
 
 var project = {
-	'url': 'rosh.test',
+	'url': 'dunn.test',
 	'i18n': {
-		'domain': 'rosh',
-		'destFile': 'rosh.pot',
-		'package': 'Rosh',
-		'bugReport': 'https://github.com/slushman/rosh/issues',
+		'domain': 'dunn',
+		'destFile': 'dunn.pot',
+		'package': 'Dunn',
+		'bugReport': 'https://github.com/dccmarketing/dunn/issues',
 		'translator': 'Chris Wilcoxson <chris@slushman.com>',
 		'lastTranslator': 'Chris Wilcoxson <chris@slushman.com>',
 		'path': './assets/languages',
@@ -46,11 +46,7 @@ var watch = {
 		'path': './src/js/',
 		'source': './src/js/**/*.js',
 	},
-	'styles': './src/sass/**/*.scss',
-	'svgs': {
-		'path': './src/svgs/',
-		'source': './src/svgs/**/*.svg',
-	}
+	'styles': './src/scss/**/*.scss',
 }
 
 /**
@@ -71,12 +67,12 @@ const AUTOPREFIXER_BROWSERS = [
 ];
 
 /**
- * Load gulp plugins and assing them semantic names.
+ * Load gulp plugins and assign them semantic names.
  */
-var gulp = require('gulp'); // Gulp of-course
+var gulp = require('gulp');
 var plugins = require('gulp-load-plugins')();
-var browserSync = require('browser-sync').create(); // Reloads browser and injects CSS.
-var reload = browserSync.reload; // For manual browser reload.
+var browserSync = require('browser-sync').create();
+var reload = browserSync.reload;
 var fs = require('fs');
 var path = require('path');
 var es = require('event-stream');
@@ -93,7 +89,7 @@ gulp.task('styles', function () {
 		.pipe(plugins.sourcemaps.init())
 		.pipe(plugins.sass({
 			errLogToConsole: true,
-			includePaths: ['./sass'],
+			includePaths: ['./scss'],
 			outputStyle: 'compact',
 			precision: 10
 		}))

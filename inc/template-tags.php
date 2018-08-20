@@ -4,15 +4,15 @@
  *
  * Eventually, some of the functionality here could be replaced by core features.
  *
- * @package DunnBrothers
+ * @package Dunn
  */
 
-if ( ! function_exists( 'dunn_brothers_posted_on' ) ) :
+if ( ! function_exists( 'dunn_posted_on' ) ) :
 
 	/**
 	 * Prints HTML with meta information for the current post-date/time.
 	 */
-	function dunn_brothers_posted_on() {
+	function dunn_posted_on() {
 
 		$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
 		if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
@@ -34,16 +34,16 @@ if ( ! function_exists( 'dunn_brothers_posted_on' ) ) :
 
 		echo '<span class="posted-on">' . $posted_on . '</span>'; // WPCS: XSS OK.
 
-	} // dunn_brothers_posted_on()
+	} // dunn_posted_on()
 
 endif;
 
-if ( ! function_exists( 'dunn_brothers_posted_by' ) ) :
+if ( ! function_exists( 'dunn_posted_by' ) ) :
 
 	/**
 	 * Prints HTML with meta information for the current author.
 	 */
-	function dunn_brothers_posted_by() {
+	function dunn_posted_by() {
 
 		$byline = sprintf(
 			/* translators: %s: post author. */
@@ -53,16 +53,16 @@ if ( ! function_exists( 'dunn_brothers_posted_by' ) ) :
 
 		echo '<span class="byline"> ' . $byline . '</span>'; // WPCS: XSS OK.
 
-	} // dunn_brothers_posted_by()
+	} // dunn_posted_by()
 
 endif;
 
-if ( ! function_exists( 'dunn_brothers_entry_footer' ) ) :
+if ( ! function_exists( 'dunn_entry_footer' ) ) :
 
 	/**
 	 * Prints HTML with meta information for the categories, tags and comments.
 	 */
-	function dunn_brothers_entry_footer() {
+	function dunn_entry_footer() {
 
 		// Hide category and tag text for pages.
 		if ( 'post' === get_post_type() ) {
@@ -89,50 +89,13 @@ if ( ! function_exists( 'dunn_brothers_entry_footer' ) ) :
 		
 		}
 
-		if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
-		
-			echo '<span class="comments-link">';
-		
-			comments_popup_link(
-				sprintf(
-					wp_kses(
-						/* translators: %s: post title */
-						__( 'Leave a Comment<span class="screen-reader-text"> on %s</span>', 'dunn' ),
-						array(
-							'span' => array(
-								'class' => array(),
-							),
-						)
-					),
-					get_the_title()
-				)
-			);
-			echo '</span>';
-		
-		}
+		dunn_entry_edit_link();
 
-		edit_post_link(
-			sprintf(
-				wp_kses(
-					/* translators: %s: Name of current post. Only visible to screen readers */
-					__( 'Edit <span class="screen-reader-text">%s</span>', 'dunn' ),
-					array(
-						'span' => array(
-							'class' => array(),
-						),
-					)
-				),
-				get_the_title()
-			),
-			'<span class="edit-link">',
-			'</span>'
-		);
-
-	} // dunn_brothers_entry_footer()
+	} // dunn_entry_footer()
 
 endif;
 
-if ( ! function_exists( 'dunn_brothers_post_thumbnail' ) ) :
+if ( ! function_exists( 'dunn_post_thumbnail' ) ) :
 
 	/**
 	 * Displays an optional post thumbnail.
@@ -140,7 +103,7 @@ if ( ! function_exists( 'dunn_brothers_post_thumbnail' ) ) :
 	 * Wraps the post thumbnail in an anchor element on index views, or a div
 	 * element when on single views.
 	 */
-	function dunn_brothers_post_thumbnail() {
+	function dunn_post_thumbnail() {
 
 		if ( post_password_required() || is_attachment() || ! has_post_thumbnail() ) { return; }
 
@@ -166,6 +129,38 @@ if ( ! function_exists( 'dunn_brothers_post_thumbnail' ) ) :
 
 		endif; // End is_singular().
 
-	} // dunn_brothers_post_thumbnail()
+	} // dunn_post_thumbnail()
+
+endif;
+
+
+
+if ( ! function_exists( 'dunn_entry_edit_link' ) ) :
+
+	/**
+	 * Displays the entry edit link.
+	 *
+	 * @return 		mixed 		Entry comments markup.
+	 */
+	function dunn_entry_edit_link() {
+
+		edit_post_link(
+			sprintf(
+				wp_kses(
+					/* translators: %s: Name of current post. Only visible to screen readers */
+					__( 'Edit <span class="screen-reader-text">%s</span>', 'dunn' ),
+					array(
+						'span' => array(
+							'class' => array(),
+						),
+					)
+				),
+				get_the_title()
+			),
+			'<span class="edit-link">',
+			'</span>'
+		);
+	
+	} // dunn_entry_edit_link()
 
 endif;

@@ -4,11 +4,11 @@
  * Autoloader for PHP 5.3+
  *
  * @since 			1.0.0
- * @package 		DunnBrothers
- * @subpackage 		DunnBrothers/classes
+ * @package 		Dunn
+ * @subpackage 		Dunn/classes
  */
 
-namespace DunnBrothers\Classes;
+namespace Dunn\Classes;
 
 class Autoloader {
 
@@ -19,7 +19,7 @@ class Autoloader {
 	 */
 	public static function autoloader( $class_name ) {
 
-		if ( false === strpos( $class_name, 'DunnBrothers' ) ) { return; }
+		if ( false === strpos( $class_name, 'Dunn' ) ) { return; }
 
 		$file_parts = explode( '\\', $class_name );
 
@@ -72,4 +72,4 @@ class Autoloader {
 
 } // class
 
-spl_autoload_register( 'DunnBrothers\Classes\Autoloader::autoloader' );
+spl_autoload_register( 'Dunn\Classes\Autoloader::autoloader' );

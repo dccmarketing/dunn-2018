@@ -17,8 +17,8 @@
 
 	}
 
-	&.menu-item-has-children {
-		@include phone-down {
+	&.menu-item-has-children > a {
+		@include tablet-down {
 			border-bottom 	: 3px solid $med_gray;
 		}
 	}

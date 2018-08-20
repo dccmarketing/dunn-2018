@@ -4,11 +4,11 @@
  * A class of helpful menu-related functions
  *
  * @since 			1.0.0
- * @package 		DunnBrothers
- * @subpackage 		DunnBrothers\Classes
+ * @package 		Dunn
+ * @subpackage 		Dunn\Classes
  */
 
-namespace DunnBrothers\Classes;
+namespace Dunn\Classes;
 
 class Menu_Utilities {
 
@@ -92,7 +92,7 @@ class Menu_Utilities {
 
 		}
 
-		$output .= '<button class="menu-1-submenu-toggle flex-center">+</button>';
+		$output .= '<button class="menu-1-submenu-toggle">+</button>';
 
 		return $output;
 

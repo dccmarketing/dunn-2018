@@ -2,7 +2,7 @@
  * Toggle Button.
  */
 .menu-1-toggle {
-	@include resetbutton( $dark_med_gray, $dark_med_gray, $light_gray );
+	@include resetbutton( $gray, $gray, $light_gray );
 
 	color 			: $light_gray;
 	font-size		: 1.25em;
@@ -16,11 +16,6 @@
 	&:focus,
 	&:active {
 		border		: none;
-	}
-
-	&:focus,
-	&:active {
-		box-shadow: inset 0 0 5px $med_gray;
 	}
 
 	@include laptop-up {
@@ -50,5 +45,15 @@
 	@include laptop-up {
 		display 	: inline-block;
 		margin-left : 0.25em;
+	}
+}
+
+.close-tablet-menu-btn {
+	display: none;
+
+	@include tablet-to-laptop {
+		align-items 	: center;
+		display 		: flex;
+		justify-content : center;
 	}
 }

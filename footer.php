@@ -6,29 +6,32 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package DunnBrothers
+ * @package Dunn
  */
 
-	?></div><!-- #content -->
+	?><footer class="site-footer" id="colophon">
+		<div class="site-credits"><?php
 
-	<footer id="colophon" class="site-footer">
+			the_custom_logo();
+
+			?><div class="copyright">&copy; <?php echo date( 'Y' ); ?> <a href="<?php echo esc_url( get_admin_url() ); ?>"><?php echo get_bloginfo( 'name' ); ?></a></div>
+		</div><!-- .site-credits -->
 		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'dunn' ) ); ?>"><?php
+			<address><?php echo get_theme_mod( 'company_address' ); ?></address><?php
 
-				/* translators: %s: CMS name, i.e. WordPress. */
-				printf( esc_html__( 'Proudly powered by %s', 'dunn' ), 'WordPress' );
-			
-			?></a>
-			<span class="sep"> | </span><?php
+			get_template_part( 'template-parts/menu', 'footer' );
 
-			/* translators: 1: Theme name, 2: Theme author. */
-			printf( esc_html__( 'Theme: %1$s by %2$s.', 'dunn' ), 'dunn', '<a href="https://www.dccmarketing.com">DCC Marketing</a>' );
-		
-		?></div><!-- .site-info -->
-	</footer><!-- #colophon -->
-</div><!-- #page --><?php 
+			?><div class=""><?php
 
-wp_footer(); 
+				get_template_part( 'template-parts/button', 'cta' );
 
-?></body>
+				get_template_part( 'template-parts/menu', 'social' );
+
+			?></div>
+		</div><!-- .site-info -->
+	</footer><!-- .site-footer --><?php 
+
+	wp_footer(); 
+
+	?></body>
 </html>

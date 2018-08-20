@@ -1,12 +1,12 @@
 input,
 textarea {
-	border 				: 1px solid $light_med_gray;
+	border 				: 1px solid $med_gray;
 	border-radius 		: 3px;
 	padding 			: 3px;
 
 	&:focus {
-		border-color 	: $light_med_gray;
-		outline-color 	: $med_gray;
+		border-color 	: $med_gray;
+		outline-color 	: $red;
 	}
 }
 

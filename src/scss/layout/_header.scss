@@ -1,7 +1,9 @@
 .site-header {
 	// DO NOT ADD PADDING HERE! - it screws up menus
+	align-items 	: center;
+	display 		: flex;
+	flex-direction 	: column;
 	grid-area		: header;
-	margin-bottom	: $size__default-bot-marg;
 	overflow 		: auto;
 
 	@include tablet-portrait-up {
@@ -22,7 +24,7 @@
 }
 
 .site-title-link {
-	color 			: $dark_med_gray;
+	color 			: $gray;
 	text-decoration : none;
 }
 

@@ -46,16 +46,16 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/.
 /*--------------------------------------------------------------
 ## Components
 --------------------------------------------------------------*/
-@import "components/authorbox";
+@import "components/blocks";
 @import "components/breadcrumbs";
 @import "components/captions";
 @import "components/entry-meta";
 @import "components/galleries";
 @import "components/media";
 @import "components/posts-navigation";
-@import "components/primary-menu";
-@import "components/search";
+@import "components/main-menu";
 @import "components/social";
+@import "components/cta-button";
 
 /*--------------------------------------------------------------
 ## Layout
@@ -82,4 +82,3 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/.
 --------------------------------------------------------------*/
 @import "plugins/formidable";
 @import "plugins/infinite-scroll";
-@import "plugins/woocommerce";

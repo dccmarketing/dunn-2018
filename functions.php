@@ -4,10 +4,10 @@
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
- * @package DunnBrothers
+ * @package Dunn
  */
 
-use \DunnBrothers\Classes as Classes;
+use \Dunn\Classes as Classes;
 
 /**
  * Set the constants used throughout.
@@ -19,6 +19,16 @@ define( 'PARENT_THEME_VERSION', '1.0.0' );
  * Custom template tags for this theme.
  */
 require get_template_directory() . '/inc/template-tags.php';
+
+/**
+ * Custom template tags for this theme.
+ */
+require get_template_directory() . '/inc/toolkit.php';
+
+/**
+ * Custom template tags for this theme.
+ */
+require get_template_directory() . '/inc/imagekit.php';
 
 /**
  * Load Autoloader
@@ -35,8 +45,11 @@ $classes[] = new Classes\Media();
 $classes[] = new Classes\Uploads();
 $classes[] = new Classes\Template_Column();
 $classes[] = new Classes\Customizer();
+$classes[] = new Classes\Slushicons();
 $classes[] = new Classes\Menu_Utilities();
 $classes[] = new Classes\Menu_Styles();
+$classes[] = new Classes\Login();
+$classes[] = new Classes\Admin();
 
 $classes[] = new Classes\Automattic();
 $classes[] = new Classes\Yoast();

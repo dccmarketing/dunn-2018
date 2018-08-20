@@ -3,7 +3,7 @@
  */
 .menu-1-item-link {
 	align-items 	: center;
-	color 			: $dark_med_gray;
+	color 			: $gray;
 	display			: flex;
 	padding 		: 0.5em 1em;
 	text-decoration	: none;
@@ -15,16 +15,21 @@
 	}
 
 	@include tablet-portrait-up {
-		color: $dark_med_gray;
+		color: $gray;
 	}
 
 	@include laptop-up {
-		background-color: $med_gray;
-		color 			: $dark_gray;
+		color: $gray;
 	}
 
 	&:focus {
-		outline-color: $med_gray;
+		outline-color: $red;
+	}
+
+	&:focus,
+	&:active,
+	&:visited {
+		color: $gray;
 	}
 
 }

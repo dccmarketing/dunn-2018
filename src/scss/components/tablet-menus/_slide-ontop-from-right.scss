@@ -12,7 +12,7 @@
 	.close-btn-text {
 		&:after {
 			@include tablet-to-laptop {
-				border-left-color	: $dark_gray;
+				border-left-color	: $gray;
 				display 			: inline-block;
 				margin-left			: 0.5em;
 			}

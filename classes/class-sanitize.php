@@ -4,11 +4,11 @@
  * Sanitize anything
  *
  * @since 			1.0.0
- * @package 		DunnBrothers
- * @subpackage 		DunnBrothers\Classes
+ * @package 		Dunn
+ * @subpackage 		Dunn\Classes
  */
 
-namespace DunnBrothers\Classes;
+namespace Dunn\Classes;
 
 class Sanitize {
 

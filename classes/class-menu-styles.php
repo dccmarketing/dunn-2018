@@ -17,7 +17,7 @@
  * and current page parent.
  */
 
-namespace DunnBrothers\Classes;
+namespace Dunn\Classes;
 
 class Menu_Styles {
 

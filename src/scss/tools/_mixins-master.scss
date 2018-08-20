@@ -1,4 +1,32 @@
 /**
+ * Centers a block element.
+ */
+@mixin center-block() {
+	display 		: block;
+	margin-left 	: auto;
+	margin-right 	: auto;
+}
+
+/**
+ * Centers and sets the max-width, with optional padding.
+ * @param		string 		$padding 		Optional padding.
+ */
+@mixin centermax( $padding: 0 ) {
+	margin 		: 0 auto;
+	max-width 	: $size__max-width;
+	padding 	: $padding;
+}
+
+/**
+ * Hides non-breaking text and puts an ellipsis at the end to show there's additional text.
+ */
+@mixin ellipsis() {
+	overflow 		: hidden;
+	text-overflow 	: ellipsis;
+	white-space 	: nowrap;
+}
+
+/**
  * Rem output with px fallback
  *
  * @param 		int 		$sizeValue 		Font size value in REMs. Default: 1.
@@ -7,6 +35,12 @@
 	font-size: ( $sizeValue * 16 ) + px;
 	font-size: $sizeValue + rem;
 } // font-size()
+
+@mixin nobreak() {
+	-webkit-column-break-inside : avoid;
+	page-break-inside 			: avoid;
+	break-inside 				: avoid;
+}
 
 @mixin resetbutton( $bgcolor: transparent, $bghover: inherit, $hovercolor: inherit ) {
 	background 		: $bgcolor;

@@ -8,9 +8,9 @@
  * In the menu editor, edit the classes for the menu item and add "slushicons", the name and type of the 
  * icon to add, then the position for the menu item text.
  * 
- * right: adds the icon to the right of the menu item text.
- * left: adds the icon to the left of the menu item text.
- * hide: adds the icon and hides the menu item text in an accessible span.
+ * text-right: adds the icon to the right of the menu item text.
+ * text-left: adds the icon to the left of the menu item text.
+ * text-hide: adds the icon and hides the menu item text in an accessible span.
  * 
  * The icon name should include what folder contains that icon:
  * dic- = Dashicon
@@ -22,13 +22,13 @@
  * 
  * For a menu item to contain the FontAwesome icon for Twitter to the left of the menu text,
  * the classes for that menu item include:
- * slushicons left fas-twitter
+ * slushicons text-left fas-twitter
  * 
  * The menu has no text and the Dashicon for Facebook:
- * slushicons hide dic-facebook
+ * slushicons text-hide dic-facebook
  * 
  * Menu item with a custom icon and the menu text on the right:
- * slushicons right svg-custom
+ * slushicons text-right svg-custom
  * 
  * 
  * REQUIREMENTS
@@ -42,7 +42,7 @@
  * The theme folder should contain SVGs for that particular site.
  */
 
-namespace DunnBrothers\Classes;
+namespace Dunn\Classes;
 
 class Slushicons {
 
@@ -57,7 +57,7 @@ class Slushicons {
 	public function hooks(){
 
 		add_filter( 'nav_menu_item_title', 			array( $this, 'add_icons_to_menu' ), 10, 4 );
-		add_filter( 'dunn_menu_item_icon_name', 	array( $this, 'get_icon_info' ), 10, 3 );
+		add_filter( 'dunn_menu_item_icon_info', 	array( $this, 'get_icon_info' ), 10, 3 );
 		add_filter( 'dunn_menu_item_text_position', array( $this, 'get_text_position' ), 10, 3 );
 
 	} // hooks()
@@ -66,7 +66,7 @@ class Slushicons {
 	 * Adds an icon in the menu item title, either with or without the title text.
 	 * 
 	 * @exits 		If $args is empty or an array.
-	 * @exits 		If 'slushicons' is not in the classes array.
+	 * @exits 		If 'slushicon' is not in the classes array.
 	 * @hooked 		nav_menu_item_title 			10
 	 * @param 		string 		$title 				The menu item title.
 	 * @param 		object 		$item				The current menu item.
@@ -77,13 +77,13 @@ class Slushicons {
 	public function add_icons_to_menu( $title, $item, $args, $depth ) {
 
 		if ( empty( $args ) || is_array( $args ) ) { return $title; }
-		if ( ! in_array( 'slushicons', $item->classes ) ) { return $title; }
+		if ( ! in_array( 'slushicon', $item->classes ) ) { return $title; }
 
-		$icon_name 	= apply_filters( 'dunn_menu_item_icon_name', '', $item, $args );
-		$icon 		= $this->get_icon( $icon_name );
+		$icon_info 	= apply_filters( 'dunn_menu_item_icon_info', '', $item, $args );
+		$icon 		= $this->get_icon( $icon_info );
 		$textpos 	= apply_filters( 'dunn_menu_item_text_position', '', $item, $args );
 
-		if ( empty( $icon_name ) && empty( $textpos ) ) { return $title; }
+		if ( empty( $icon ) && empty( $textpos ) ) { return $title; }
 
 		$output = '';
 
@@ -150,7 +150,7 @@ class Slushicons {
 	 * Returns an array of info about the icon.
 	 *
 	 * @exits 		If $classes is empty.
-	 * @hooked 		dunn_menu_item_icon_name 		10
+	 * @hooked 		dunn_menu_item_icon_info 		10
 	 * @param 		string 		$icon 					The current icon name.
 	 * @param 		object 		$item					The menu item object.
 	 * @param 		array 		$args 					The menu arguments.
@@ -209,7 +209,7 @@ class Slushicons {
 
 		if ( empty( $item->classes ) ) { return; }
 
-		if ( in_array( 'no-text', $item->classes ) ) { return 'hide'; }
+		if ( in_array( 'text-hide', $item->classes ) ) { return 'hide'; }
 		if ( in_array( 'text-left', $item->classes ) ) { return 'left'; }
 		if ( in_array( 'text-right', $item->classes ) ) { return 'right'; }
 		if ( in_array( 'text-coin', $item->classes ) ) { return 'coin'; }
@@ -223,32 +223,34 @@ class Slushicons {
 	/**
 	 * Returns the code for the icon.
 	 *
-	 * @exits 		If $icon is empty
-	 * @exits 		if $icon is not an array.
-	 * @param 		array 		$icon 			The icon info array.
-	 * @return 		mixed 						The icon markup.
+	 * @exits 		If $icon_info is empty
+	 * @exits 		if $icon_info is not an array.
+	 * @param 		array 		$icon_info 			The icon info array.
+	 * @return 		mixed 							The icon markup.
 	 */
-	private function get_icon( $icon ) {
+	private function get_icon( $icon_info ) {
 
-		if ( empty( $icon ) || ! is_array( $icon ) ) { return; }
+		if ( empty( $icon_info ) || ! is_array( $icon_info ) ) { return; }
 
 		$return = '';
 
-		if ( 'dashicons' === $icon['type'] ) {
+		if ( 'dashicons' === $icon_info['type'] ) {
 
-			$return = '<span class="dashicons dashicons-' . $icon['name'] . '"></span>';
-
-		}
-
-		if ( 'fontawesome' === $icon['type'] ) {
-
-			$return = '<span class="fa fa-' . $icon['name'] . '"></span>';
+			$return = '<span class="dashicons dashicons-' . $icon_info['name'] . '"></span>';
 
 		}
 
-		if ( 'svg' === $icon['type'] ) {
+		if ( 'fontawesome' === $icon_info['type'] ) {
 
-			$check = tcci_get_svg( $icon['name'] );
+			$return = '<span class="fa fa-' . $icon_info['name'] . '"></span>';
+
+		}
+
+		if ( 'svg' === $icon_info['type'] ) {
+
+			$check = dunn_get_svg( $icon_info['name'] );
+
+			//wp_die(print_r($check));
 
 			if ( ! is_null( $check ) ) {
 
@@ -261,70 +263,5 @@ class Slushicons {
 		return $return;
 
 	} // get_icon()
-
-	/**
-	 * Returns the requested SVG
-	 *
-	 * @param 		string 		$svg 		The name of the icon to return
-	 * @return 		mixed 					The SVG code
-	 */
-	private function get_svg( $svg ) {
-
-		if ( empty( $svg ) ) { return; }
-
-		$return 	= '';
-		$filecheck 	= $this->check_for_svg_file( $svg );
-
-		if ( empty( $filecheck ) ) { return FALSE; }
-
-		$get = wp_remote_get( $filecheck );
-
-		if ( is_wp_error( $get ) ) { return FALSE; }
-
-		$return = wp_remote_retrieve_body( $get );
-
-		return $return;
-
-	} // get_svg()
-
-	/**
-	 * Returns a path if the file exists, FALSE if not.
-	 *
-	 * @param 		string 		$file 		The file name to check for.
-	 * @return 		mixed 					File path or FALSE
-	 */
-	private function check_for_svg_file( $file ) {
-
-		if ( empty( $file ) ) { return FALSE; }
-
-		$return 	= FALSE;
-		$paths[] 	= '/svgs/dashicons';
-		$paths[] 	= '/svgs/fontawesome';
-		$paths[] 	= '/svgs/theme';
-
-		/**
-		 * The dunn_svg_paths filter.
-		 */
-		$paths = apply_filters( 'dunn_svg_paths', $paths );
-
-		if ( empty( $paths ) ) { return FALSE; }
-
-		foreach ( $paths as $path ) {
-
-			$svgfile 		= $file . '.svg';
-			$fullpath 		= get_template_directory() . $path;
-			$pathtocheck 	= trailingslashit( $fullpath ) . $svgfile;
-			$check			= file_exists( $pathtocheck );
-
-			if ( ! $check ) { continue; }
-
-			$uri 	= get_template_directory_uri() . $path;
-			$return = trailingslashit( $uri ) . $svgfile;
-
-		} // foreach
-
-		return $return;
-
-	} // check_for_svg_file()
 
 } // class

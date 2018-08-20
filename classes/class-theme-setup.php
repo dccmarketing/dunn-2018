@@ -1,14 +1,14 @@
 <?php
 
 /**
- * Methods for setting up the DunnBrothers theme.
+ * Methods for setting up the Dunn theme.
  *
  * @since 			1.0.0
- * @package 		DunnBrothers
- * @subpackage 		DunnBrothers\Classes
+ * @package 		Dunn
+ * @subpackage 		Dunn\Classes
  */
 
-namespace DunnBrothers\Classes;
+namespace Dunn\Classes;
 
 class Theme_Setup {
 

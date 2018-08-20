@@ -7,11 +7,11 @@
  *
  * @link 			https://developer.wordpress.org/themes/customize-api/
  * @since 			1.0.0
- * @package 		DunnBrothers
- * @subpackage 		DunnBrothers\Classes
+ * @package 		Dunn
+ * @subpackage 		Dunn\Classes
  */
 
-namespace DunnBrothers\Classes;
+namespace Dunn\Classes;
 
 class Customizer {
 
@@ -25,16 +25,55 @@ class Customizer {
 	 */
 	public function hooks() {
 
-		add_action( 'customize_register', 	array( $this, 'register_panels' ) );
-		add_action( 'customize_register', 	array( $this, 'register_sections' ) );
-		add_action( 'customize_register', 	array( $this, 'register_fields_default' ) );
-		add_action( 'customize_register', 	array( $this, 'register_fields_images' ) );
-		add_action( 'customize_register', 	array( $this, 'register_fields_menus' ) );
-		add_action( 'customize_register', 	array( $this, 'register_fields_siteid' ) );
-		add_action( 'wp_head', 				array( $this, 'header_output' ) );
-		add_action( 'customize_register', 	array( $this, 'load_customize_controls' ), 0 );
+		add_action( 'customize_register', 					array( $this, 'register_panels' ) );
+		add_action( 'customize_register', 					array( $this, 'register_sections' ) );
+		add_action( 'customize_register', 					array( $this, 'register_fields_default' ) );
+		add_action( 'customize_register', 					array( $this, 'register_fields_images' ) );
+		add_action( 'customize_register', 					array( $this, 'register_fields_menus' ) );
+		add_action( 'customize_register', 					array( $this, 'register_fields_siteid' ) );
+		add_action( 'wp_head', 								array( $this, 'header_output' ) );
+		//add_action( 'customize_register', 					array( $this, 'load_customize_controls' ), 0 );
+		add_action( 'customize_preview_init', 				array( $this, 'enqueue_customizer_scripts' ) );
+		add_action( 'customize_controls_enqueue_scripts', 	array( $this, 'enqueue_customizer_controls' ) );
+		add_action( 'customize_controls_print_styles', 		array( $this, 'enqueue_customizer_styles' ) );
 
 	} // hooks()
+
+	/**
+	 * Used by customizer controls, mostly for active callbacks.
+	 *
+	 * @hooked		customize_controls_enqueue_scripts
+	 * @access 		public
+	 * @see 		add_action( 'customize_preview_init', $func )
+	 * @since 		1.0.0
+	 */
+	public function enqueue_customizer_controls() {
+
+		wp_enqueue_script( 'dunn-customizer-controls', get_theme_file_uri( '/assets/js/customizer-controls.min.js' ), array( 'jquery', 'customize-controls' ), PARENT_THEME_VERSION, true );
+
+	} // enqueue_customizer_controls()
+
+	/**
+	 * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
+	 *
+	 * @hooked 		customize_preview_init
+	 */
+	public function enqueue_customizer_scripts() {
+
+		wp_enqueue_script( 'dunn-customizer', get_theme_file_uri( '/assets/js/customizer.min.js' ), array( 'jquery', 'customize-preview' ), PARENT_THEME_VERSION, true );
+
+	} // enqueue_customizer_scripts()
+
+	/**
+	 * Loads custopmizer.css file for Customizer Previewer styling.
+	 *
+	 * @hooked 		customize_controls_print_styles
+	 */
+	public function enqueue_customizer_styles() {
+
+		wp_enqueue_style( 'dunn-customizer-style', get_theme_file_uri( 'customizer.css' ), 10, 2 );
+
+	} // enqueue_customizer_styles()
 
 	/**
 	 * Registers custom panels for the Customizer
@@ -273,6 +312,56 @@ class Customizer {
 			)
 		);
 		$wp_customize->get_setting( 'tag_manager_id' )->transport = 'postMessage';
+
+		// Company Address Field
+		$wp_customize->add_setting(
+			'company_address',
+			array(
+				'capability' 		=> 'edit_theme_options',
+				'default'  			=> '',
+				'sanitize_callback' => 'sanitize_text_field',
+				'transport' 		=> 'postMessage',
+				'type' 				=> 'theme_mod'
+			)
+		);
+		$wp_customize->add_control(
+			'company_address',
+			array(
+				'active_callback' 	=> '',
+				'description' 		=> esc_html__( '', 'dunn' ),
+				'label'  			=> esc_html__( 'Company Address', 'dunn' ),
+				'priority' 			=> 10,
+				'section'  			=> 'title_tagline',
+				'settings' 			=> 'company_address',
+				'type' 				=> 'text'
+			)
+		);
+		$wp_customize->get_setting( 'company_address' )->transport = 'postMessage';
+
+		// Company Phone Number Field
+		$wp_customize->add_setting(
+			'company_phone',
+			array(
+				'capability' 		=> 'edit_theme_options',
+				'default'  			=> '',
+				'sanitize_callback' => 'sanitize_text_field',
+				'transport' 		=> 'postMessage',
+				'type' 				=> 'theme_mod'
+			)
+		);
+		$wp_customize->add_control(
+			'company_phone',
+			array(
+				'active_callback' 	=> '',
+				'description' 		=> esc_html__( '', 'dunn' ),
+				'label'  			=> esc_html__( 'Company Phone Number', 'dunn' ),
+				'priority' 			=> 10,
+				'section'  			=> 'title_tagline',
+				'settings' 			=> 'company_phone',
+				'type' 				=> 'text'
+			)
+		);
+		$wp_customize->get_setting( 'company_phone' )->transport = 'postMessage';
 
 	} // register_fields_siteid()
 

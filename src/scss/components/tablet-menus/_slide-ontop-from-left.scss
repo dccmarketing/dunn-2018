@@ -12,7 +12,7 @@
 	.close-btn-text {
 		&:before {
 			@include tablet-to-laptop {
-				border-right-color	: $dark_gray;
+				border-right-color	: $gray;
 				display 			: inline-block;
 				margin-right		: 0.5em;
 			}

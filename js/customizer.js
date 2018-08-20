@@ -8,6 +8,42 @@
 
 ( function( $ ) {
 
+	/**
+	 * AlterClass function by Pete Boere.
+	 *
+	 * @link https://gist.github.com/peteboere/1517285
+	 * @param 		string 		removals 		Classses to remove.
+	 * @param 		string 		additions 		Classes to add.
+	 * @return 		string 						Classes for an element.
+	 */
+	$.fn.alterClass = function (removals, additions) {
+
+		var self = this;
+
+		if (removals.indexOf('*') === -1) {
+			// Use native jQuery methods if there is no wildcard matching
+			self.removeClass(removals);
+			return !additions ? self : self.addClass(additions);
+		}
+
+		var patt = new RegExp('\\s' +
+			removals.
+				replace(/\*/g, '[A-Za-z0-9-_]+').
+				split(' ').
+				join('\\s|\\s') +
+			'\\s', 'g');
+
+		self.each(function (i, it) {
+			var cn = ' ' + it.className + ' ';
+			while (patt.test(cn)) {
+				cn = cn.replace(patt, ' ');
+			}
+			it.className = $.trim(cn);
+		});
+
+		return !additions ? self : self.addClass(additions);
+	};
+
 	// Site title and description.
 	wp.customize( 'blogname', function( value ) {
 		value.bind( function( to ) {
@@ -39,4 +75,33 @@
 			}
 		} );
 	} );
+
+	// Tablet Menu Style
+	wp.customize('tablet_menu', function (value) {
+
+		value.bind(function (to) {
+
+			$('body').alterClass('tablet-*');
+
+			var tabletClass;
+
+			switch (to) {
+
+				case 'tablet-slide-ontop-from-left': tabletClass = 'tablet-slide tablet-slide-sides tablet-slide-ontop-from-left'; break;
+				case 'tablet-slide-ontop-from-right': tabletClass = 'tablet-slide tablet-slide-sides tablet-slide-ontop-from-right'; break;
+				case 'tablet-slide-ontop-from-top': tabletClass = 'tablet-slide tablet-slide-topbot tablet-slide-ontop-from-top'; break;
+				case 'tablet-slide-ontop-from-bottom': tabletClass = 'tablet-slide tablet-slide-topbot tablet-slide-ontop-from-bottom'; break;
+				case 'tablet-push-from-left': tabletClass = 'tablet-push tablet-push-from-left'; break;
+				case 'tablet-push-from-right': tabletClass = 'tablet-push tablet-push-from-right'; break;
+				default: tabletClass = ''; break;
+
+			}
+
+			console.log(tabletClass);
+
+			$('body').addClass(tabletClass);
+
+		});
+	});
+
 } )( jQuery );

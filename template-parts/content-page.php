@@ -4,19 +4,16 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package DunnBrothers
+ * @package Dunn
  */
 
 ?><article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header"><?php
+	<header class="page-header content-page"><?php
 	
 		the_title( '<h1 class="entry-title">', '</h1>' ); 
 		
-	?></header><!-- .entry-header --><?php 
-	
-	dunn_brothers_post_thumbnail(); 
-	
-	?><div class="entry-content"><?php
+	?></header><!-- .page-header -->
+	<div class="page-content"><?php
 
 		the_content();
 
@@ -25,28 +22,13 @@
 			'after'  => '</div>',
 		) );
 
-	?></div><!-- .entry-content --><?php 
+	?></div><!-- .page-content --><?php 
 	
 	if ( get_edit_post_link() ) : 
 	
 		?><footer class="entry-footer"><?php
 
-			edit_post_link(
-				sprintf(
-					wp_kses(
-						/* translators: %s: Name of current post. Only visible to screen readers */
-						__( 'Edit <span class="screen-reader-text">%s</span>', 'dunn' ),
-						array(
-							'span' => array(
-								'class' => array(),
-							),
-						)
-					),
-					get_the_title()
-				),
-				'<span class="edit-link">',
-				'</span>'
-			);
+			dunn_entry_edit_link();
 
 		?></footer><!-- .entry-footer --><?php 
 

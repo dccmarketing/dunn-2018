@@ -75,8 +75,8 @@ address {
 }
 
 pre {
-	background		: $light_med_gray;
-	color 			: $dark_med_gray;
+	background		: $med_gray;
+	color 			: $gray;
 	@include font-size(0.9375);
 	line-height		: $font__line-height-pre;
 	margin-bottom	: 1.6em;
@@ -101,8 +101,8 @@ acronym {
 
 mark,
 ins {
-	background		: $insert;
-	color 			: $dark_gray;
+	background		: $light_gray;
+	color 			: $gray;
 	padding 		: 0 0.25em;
 	text-decoration	: none;
 }

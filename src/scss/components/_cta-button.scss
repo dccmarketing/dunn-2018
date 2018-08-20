@@ -1,0 +1,20 @@
+.btn-cta {
+	background-color: $red;
+	line-height: 1.25;
+}
+
+.btn-cta-link {
+	display: flex;
+	padding: 0.5em;
+
+	@include unline( $light_gray );
+
+	.large & {
+		font-size: 1.25em;
+	}
+}
+
+.svg-phone {
+	fill: $light_gray;
+	margin-right: 0.5em;
+}

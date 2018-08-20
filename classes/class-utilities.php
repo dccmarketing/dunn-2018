@@ -4,11 +4,11 @@
  * A class of helpful theme functions
  *
  * @since 			1.0.0
- * @package 		DunnBrothers
- * @subpackage 		DunnBrothers\Classes
+ * @package 		Dunn
+ * @subpackage 		Dunn\Classes
  */
 
-namespace DunnBrothers\Classes;
+namespace Dunn\Classes;
 
 class Utilities {
 
@@ -56,10 +56,6 @@ class Utilities {
 		if ( ! is_singular() ) {
 
 			$classes[] = 'hfeed';
-
-		} elseif ( is_singular() ) {
-
-			$classes[] = 'content-sidebar';
 
 		}
 
@@ -110,16 +106,6 @@ class Utilities {
 				$classes[] = 'full-width';
 
 			}
-
-		}
-
-		if ( is_home() && is_front_page() ) {
-
-			$classes[] = 'content-sidebar';
-
-		} elseif ( is_home() ) {
-
-			$classes[] = 'content-sidebar';
 
 		}
 

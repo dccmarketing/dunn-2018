@@ -12,13 +12,14 @@ button,
 	@include font-size(0.75);
 
 	&:hover {
-		background-color 	: $light_med_gray;
+		background-color 	: $med_gray;
 		border-bottom-color	: $med_gray;
 	}
 
 	&:focus,
 	&:active {
-		background-color 	: $light_med_gray;
+		background-color 	: $med_gray;
 		border-top-color 	: $med_gray;
+		box-shadow 			: none;
 	}
 }
