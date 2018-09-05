@@ -9,27 +9,20 @@
  * @package Dunn
  */
 
-	?><footer class="site-footer" id="colophon">
-		<div class="site-credits"><?php
+	?><footer class="site-footer" id="colophon"><?php
 
-			the_custom_logo();
+		the_custom_logo();
 
-			?><div class="copyright">&copy; <?php echo date( 'Y' ); ?> <a href="<?php echo esc_url( get_admin_url() ); ?>"><?php echo get_bloginfo( 'name' ); ?></a></div>
-		</div><!-- .site-credits -->
-		<div class="site-info">
-			<address><?php echo get_theme_mod( 'company_address' ); ?></address><?php
+		?><div class="copyright">&copy; <?php echo date( 'Y' ); ?> <a href="<?php echo esc_url( get_admin_url() ); ?>"><?php echo get_bloginfo( 'name' ); ?></a></div>
+		<address class="address"><?php echo get_theme_mod( 'company_address' ); ?></address><?php
 
-			get_template_part( 'template-parts/menu', 'footer' );
+		get_template_part( 'template-parts/menu', 'footer' );
 
-			?><div class=""><?php
+		get_template_part( 'template-parts/button', 'cta' );
 
-				get_template_part( 'template-parts/button', 'cta' );
+		get_template_part( 'template-parts/menu', 'social' );
 
-				get_template_part( 'template-parts/menu', 'social' );
-
-			?></div>
-		</div><!-- .site-info -->
-	</footer><!-- .site-footer --><?php 
+	?></footer><!-- .site-footer --><?php 
 
 	wp_footer(); 
 

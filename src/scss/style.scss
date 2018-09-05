@@ -1,5 +1,5 @@
 /*!
-Theme Name: Rosh
+Theme Name: Dunn
 Theme URI: https://www.slushman.com/
 Author: Chris Wilcoxson
 Author URI: https://www.slushman.com/
@@ -54,8 +54,10 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/.
 @import "components/media";
 @import "components/posts-navigation";
 @import "components/main-menu";
+@import "components/tablet-menus";
 @import "components/social";
 @import "components/cta-button";
+@import "components/footer-menu";
 
 /*--------------------------------------------------------------
 ## Layout

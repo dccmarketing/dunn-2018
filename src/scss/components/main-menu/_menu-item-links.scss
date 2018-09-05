@@ -7,6 +7,7 @@
 	display			: flex;
 	padding 		: 0.5em 1em;
 	text-decoration	: none;
+	text-transform 	: uppercase;
 	transition 		: $trans__default;
 	white-space 	: nowrap;
 
@@ -20,6 +21,11 @@
 
 	@include laptop-up {
 		color: $gray;
+
+		&:hover {
+			background-color: $red;
+			color: $light_gray;
+		}
 	}
 
 	&:focus {
@@ -31,17 +37,26 @@
 	&:visited {
 		color: $gray;
 	}
-
 }
 
 .menu-1-item-link-1 { // 2nd-level menu item link, first submenu
-	@include phone-down {
+	@include laptop-down {
 		padding-left: 2em;
+	}
+
+	@include tablet-to-laptop {
+		color: $med_gray;
+
+		&:hover,
+		&:focus,
+		&:active {
+			color: $light_gray;
+		}
 	}
 }
 
 .menu-1-item-link-2 { // 3rd-level menu item link, second submenu
-	@include phone-down {
+	@include laptop-down {
 		border-left : none;
 		padding-left: 3em;
 	}

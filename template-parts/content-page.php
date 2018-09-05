@@ -8,9 +8,11 @@
  */
 
 ?><article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="page-header content-page"><?php
-	
-		the_title( '<h1 class="entry-title">', '</h1>' ); 
+	<header class="page-header content-page <?php if ( has_post_thumbnail( get_the_ID() ) ) { echo 'has-featured-image'; } ?>"><?php
+
+		the_post_thumbnail( 'full' );
+
+		the_title( '<h1 class="page-title">', '</h1>' ); 
 		
 	?></header><!-- .page-header -->
 	<div class="page-content"><?php

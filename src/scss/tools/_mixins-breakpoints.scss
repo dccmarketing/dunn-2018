@@ -6,6 +6,10 @@
 	@media (max-width: 783px) { @content; }
 }
 
+@mixin tablet-portrait-down {
+	@media (max-width: 899px) { @content; }
+}
+
 @mixin tablet-down {
 	@media (max-width: 1099px) { @content; }
 }
@@ -29,6 +33,10 @@
 	@media (min-width: 900px) { @content; }
 }
 
+@mixin content-pad-up {
+	@media (min-width: 63rem) { @content; }
+}
+
 @mixin laptop-up {
 	@media (min-width: 1100px) { @content; }
 }
@@ -42,6 +50,10 @@
 
 @mixin tablet-to-adminbar {
 	@media (min-width: 600px) and (max-width: 783px ) { @content; }
+}
+
+@mixin tablet-portrait-only {
+	@media (min-width: 600px) and (max-width: 900px ) { @content; }
 }
 
 @mixin tablet-to-laptop {

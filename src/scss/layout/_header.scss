@@ -2,12 +2,25 @@
 	// DO NOT ADD PADDING HERE! - it screws up menus
 	align-items 	: center;
 	display 		: flex;
-	flex-direction 	: column;
 	grid-area		: header;
 	overflow 		: auto;
 
+	@include phone-down {
+		flex-direction 	: column;
+	}
+
 	@include tablet-portrait-up {
-		overflow 	: visible;
+		justify-content : space-around;
+	}
+
+	@include tablet-portrait-up {
+		display 			: grid;
+		grid-template-areas : "logo menu" "logo phone";
+		overflow 			: visible;
+	}
+
+	@include laptop-up {
+		grid-template-areas: "logo menu phone";
 	}
 }
 
@@ -16,10 +29,16 @@
 }
 
 .site-branding {
-	margin		: 0 auto;
+	grid-area: logo;
+
+	@include phone-down {
+		margin: 0 auto;
+	}
 }
 
 .site-title {
+	margin: 0;
+	padding: 0.25em;
 	text-align: center;
 }
 
@@ -34,4 +53,8 @@
 
 .custom-logo-link {
 	display: block;
+}
+
+.custom-logo {
+	display: inline-block;
 }

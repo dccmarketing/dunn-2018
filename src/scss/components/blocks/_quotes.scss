@@ -1,0 +1,36 @@
+.wp-block-pullquote {
+	border-top		: 2px solid;
+	border-bottom	: 2px solid;
+	padding 		: $size__default-bot-marg 0;
+
+	cite,
+	footer {
+		font-size 		: 0.75em;
+		text-transform 	: uppercase;
+	}
+}
+
+.wp-block-quote {
+	cite,
+	footer,
+	&.is-large cite,
+	&.is-large footer,
+	&.is-style-large cite,
+	&.is-style-large footer, {
+		font-size 		: 0.75em;
+		text-align 		: center;
+		text-transform 	: uppercase;
+	}
+
+	&.is-large,
+	&.is-style-large {
+		margin 		: 0 auto $size__default-bot-marg;
+		padding 	: 0;
+	}
+
+	&:not(.is-large):not(.is-style-large) {
+		border-left 	: 0.25em solid $dark;
+		padding-left 	: 1em;
+
+	}
+}

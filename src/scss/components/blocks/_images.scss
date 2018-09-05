@@ -1,0 +1,35 @@
+.wp-block-image {
+	figcaption {
+		color: $gray;
+	}
+
+	&.is-resized {
+		margin 	: 0 auto 1.5em;
+	}
+
+	.alignleft,
+	.alignright {
+		margin-bottom: 1em;
+	}
+}
+
+.wp-block-gallery {
+
+	&.is-cropped {
+
+	}
+
+	.blocks-gallery-item {
+
+		figure {
+
+			img {
+
+			}
+
+			figcaption {
+				
+			}
+		}
+	}
+}

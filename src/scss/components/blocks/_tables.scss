@@ -1,0 +1,20 @@
+.wp-block-table {
+    border-collapse : collapse;
+    display 		: block;
+	overflow-x 		: auto;
+	width 			: 100%;
+	
+	tbody,
+	tfoot,
+	thead {
+    	display 	: table;
+    	min-width 	: 240px;
+		width 		: 100%;
+	}
+
+	td,
+	th {
+		border 	: 1px solid currentColor;
+		padding : 0.5em;
+	}
+}

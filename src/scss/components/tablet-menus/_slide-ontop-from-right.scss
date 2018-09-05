@@ -11,17 +11,17 @@
 
 	.close-btn-text {
 		&:after {
-			@include tablet-to-laptop {
-				border-left-color	: $gray;
-				display 			: inline-block;
-				margin-left			: 0.5em;
+			border-left-color 	: $med_gray;
+			display 			: inline-block;
+			margin-left			: 0.5em;
+
+			.close-tablet-menu-btn:hover & {
+				border-left-color: $gray;
 			}
 		}
 	}
 
 	.menu-1-toggle {
-		@include tablet-to-laptop {
-			left 			: 0;
-		}
+		left: 0;
 	}
 }

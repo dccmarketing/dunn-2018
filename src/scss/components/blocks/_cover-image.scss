@@ -1,0 +1,19 @@
+.wp-block-cover-image {
+
+	&.has-background-dim {
+
+		&:before {
+
+		}
+	}
+
+	&.has-parallax {
+
+	}
+
+	.wp-block-cover-image-text,
+	h2 {
+		max-width 	: 75%;
+		padding 	: 1.5em 1em;
+	}
+}

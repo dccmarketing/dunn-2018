@@ -1,6 +1,57 @@
 .site-footer {
-	grid-area	: footer;
-	width 		: 100%;
+	align-items 			: center;
+	background-color 		: $dark;
+	color 					: $light_gray;
+	display 				: flex;
+	flex-direction 			: column;
+	grid-area				: footer;
+	padding 				: 2em;
+	width 					: 100%;
+
+	@include tablet-portrait-up {
+		display 				: grid;
+		grid-column-gap 		: 1em;
+		grid-template-areas 	: "logo address address" "logo menu menu" "copyright cta social";
+		grid-auto-columns 		: 1fr;
+		grid-template-rows 		: repeat(3, 33%);
+	}
+
+	@include laptop-up {
+		grid-column-gap 		: 2.5em;	
+		grid-template-columns 	: 17.5% 1fr 1fr;	
+	}
+
+	a {
+		@include unline($light_gray);
+	}
+
+	.custom-logo-link {
+		grid-area 		: logo;
+		max-width 		: 200px;
+	}
+
+	.address {
+		grid-area 	: address;
+		line-height : 2.5;
+	}
+
+	.btn-cta {
+		grid-area: cta;
+		margin-bottom: 1.5em;
+		width: 225px;
+
+		@include tablet-portrait-up {
+			margin-bottom: 0;
+		}
+	}
+
+	.btn-cta-link {
+		align-items 	: center;
+		display 		: flex;
+		font-size 		: 1.5em;
+		justify-content : center;
+		padding 		: 0.35em;
+	}
 }
 
 .wrap-footer {
@@ -8,8 +59,12 @@
 	overflow 	: auto;
 }
 
-.site-info {
-	overflow 	: auto;
-	text-align: center;
-	width 		: 100%;
+.copyright {
+	grid-area 	: copyright;
+	line-height : 2.5;
+	text-align 	: center;
+
+	@include tablet-portrait-up {
+		text-align: left;
+	}
 }

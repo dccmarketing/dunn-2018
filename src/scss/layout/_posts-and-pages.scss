@@ -1,3 +1,49 @@
+.page-template-page_full-width,
+.page-template-default {
+	grid-template-areas: "header" "breadcrumbs" "content" "footer";
+}
+
+.page-template-page_content-sidebar {
+	grid-template-areas: "header header" "breadcrumbs breadcrumbs" "content sidebar" "footer footer";
+}
+
+.page-template-page_content-sidebar {
+	grid-template-areas: "header header" "breadcrumbs breadcrumbs" "sidebar content" "footer footer";
+}
+
+.has-featured-image {
+	align-items 		: center;
+	display 			: flex;
+	justify-content 	: center;
+	margin-bottom 		: 3em;
+	overflow 			: hidden;	
+	position 			: relative;
+	width 				: 100%;
+
+	@include tablet-landscape-up {
+		height: 500px;
+	}
+
+	.wp-post-image {
+		width: 100%;
+	}
+
+	.page-title {
+		color 		: $light_gray;
+		position 	: absolute;
+		z-index 	: 1;
+	}
+
+	&:before {
+		background-color: rgba($dark, 0.5);
+		content 		: "";
+		height 			: 100%;
+		position 		: absolute;
+		width 	 		: 100%;
+		z-index 		: 1;
+	}
+}
+
 .sticky {
 	display: block;
 }
@@ -13,20 +59,58 @@
 .page-content,
 .entry-content,
 .entry-summary {
-	margin-bottom: 1.5em;
+	margin-bottom 	: 1.5em;
+
+	> * {
+		margin 			: 0 auto 1.5em;
+		padding-left 	: 1.5rem;
+		padding-right 	: 1.5rem;
+		width 			: 100%;
+
+		@include content-pad-up {
+			padding-left 	: 0;
+			padding-right 	: 0;
+			width 			: 60rem;
+		}
+	}
+
+	> .alignfull {
+		padding-left 	: 0;
+		padding-right 	: 0;
+		width 			: 100%;
+
+		&.wp-block-latest-posts {
+			padding-left 	: 1.5em;
+			padding-right 	: 1.5em;
+		}
+	}
+
+	> .alignwide {
+		max-width 	: calc(60rem + 12.5%);
+		width 		: 100%;
+
+		&.wp-block-latest-posts {
+			padding-left 	: 1.5em;
+			padding-right 	: 1.5em;
+		}
+	}
+
+	> .has-background {
+		padding: 1.5em;
+	}
+
+	@include content-pad-up {
+		.wp-block-code,
+		.wp-block-verse,
+		.wp-block-preformatted {
+			padding-left 	: 1.5em;
+			padding-right 	: 1.5em;
+		}
+	}
 }
 
 .page-links {
 	margin: 0 0 1.5em;
-}
-
-.site-content {
-	overflow 	: auto;
-	width 		: 100%;
-
-	@include centermax();
-
-	margin-bottom: $size__default-bot-marg;
 }
 
 .archive-entry-link {

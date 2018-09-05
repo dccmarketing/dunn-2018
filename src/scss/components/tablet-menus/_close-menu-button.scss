@@ -3,9 +3,25 @@
  */
 .close-tablet-menu-btn {
 	@include resetbutton();
-	display : none;
-	padding	: .5em 1em;
-	width 	: 100%;
+	background-color: $gray;
+	color 			: $med_gray;
+	display 		: none;
+	padding			: .5em 1em;
+	transition 		: $trans__default;
+	width 			: 100%;
+
+	&:hover {
+		background-color: $light_gray;
+		color 			: $gray;
+
+		.tablet-slide-ontop-from-left & .close-btn-text:before {
+			border-right-color: $gray;
+		}
+
+		.tablet-slide-ontop-from-right & .close-btn-text:before {
+			border-left-color: $gray;
+		}
+	}
 
 	&:focus,
 	&:active {
@@ -23,7 +39,7 @@
 
 	&:before,
 	&:after {
-		border 	: 5px solid transparent;
-		content : '';
+		border 		: 5px solid transparent;
+		content 	: '';
 	}
 }

@@ -26,6 +26,10 @@
 		}
 	}
 
+	@include laptop-up {
+		border: 1px solid;
+	}
+
 	&[aria-expanded="false"] {
 
 		@include phone-down() {
@@ -63,6 +67,10 @@
 
 .menu-1-items-1 { // 2nd-level menu
 	background-color: $med_gray;
+
+	@include tablet-to-laptop {
+		background-color: $gray;
+	}
 
 	a { // all the links under the 2nd-level menu
 		@include laptop-up {

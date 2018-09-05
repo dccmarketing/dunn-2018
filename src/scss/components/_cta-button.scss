@@ -1,11 +1,17 @@
 .btn-cta {
-	background-color: $red;
-	line-height: 1.25;
+	grid-area 		: phone;
+
+	.site-header & {
+		margin-bottom: 1em;
+	}
 }
 
 .btn-cta-link {
-	display: flex;
-	padding: 0.5em;
+	background-color: $red;
+	display 		: flex;
+	justify-content : center;
+	line-height 	: 1.25;
+	padding 		: 0.5em;
 
 	@include unline( $light_gray );
 

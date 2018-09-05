@@ -41,6 +41,24 @@ function dunn_check_for_svg_file( $file ) {
 } // dunn_check_for_svg_file()
 
 /**
+ * Returns an array of the featured image details
+ *
+ * @param 		int 	$postID 		The post ID
+ * @return 		array 					Array of info about the featured image
+ */
+function dunn_get_featured_images( $postID ) {
+
+	if ( empty( $postID ) ) { return FALSE; }
+
+	$imageID = get_post_thumbnail_id( $postID );
+
+	if ( empty( $imageID ) ) { return FALSE; }
+
+	return wp_prepare_attachment_for_js( $imageID );
+
+} // dunn_get_featured_images()
+
+/**
  * Returns the requested SVG
  *
  * @param 		string 		$svg 		The name of the icon to return

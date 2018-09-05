@@ -56,13 +56,10 @@ $files: 'pdf' '#FF0000' '\f497',
 	[href*=".#{nth($file, 1)}"] {
 
 		&:after {
-			color: #{nth($file, 2)};
 			content 		: "#{nth($file, 3)}";
-			display 		: inline-block;
 			font-family 	: 'dashicons';
 			line-height 	: 1;
 			speak 			: none;
-			text-decoration : none;
 		}
 	}
 }

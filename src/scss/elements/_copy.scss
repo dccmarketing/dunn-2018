@@ -1,4 +1,5 @@
 p {
+	line-height 	: 1.75;
 	margin-bottom	: $size__default-bot-marg;
 	margin-top 		: 0;
 }
@@ -20,20 +21,7 @@ q {
 
 	cite {
 		display		: block;
-		font-size 	: 1.25em;
 		margin-top 	: 1em;
-	}
-
-	&:before {
-		content		: open-quote;
-		font-size	: 1.25em;
-		line-height	: 1.25;
-	}
-
-	&:after {
-		content		: close-quote;
-		font-size	: 1.25em;
-		line-height	: 1.25;
 	}
 
 	p {
@@ -51,17 +39,6 @@ q {
 		cite {
 			text-align: center;
 		}
-	}
-
-	&.wp-block-pullquote {
-		border-top		: 2px solid;
-		border-bottom	: 2px solid;
-		padding 		: $size__default-bot-marg 0;
-	}
-
-	@include tablet-landscape-up {
-		font-size 	: 1.5em;
-		line-height : 1.45833333;
 	}
 }
 

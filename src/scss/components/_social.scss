@@ -1,3 +1,7 @@
+.nav-3 {
+	grid-area: social;
+}
+
 .social-menu-items {
 	@include resetlist();
 }
@@ -9,6 +13,7 @@
 	position 	: relative;
 	
 	svg {
+		fill 	: $light_gray;
 		height 	: $font__size-social;
 		width 	: $font__size-social;
 	}

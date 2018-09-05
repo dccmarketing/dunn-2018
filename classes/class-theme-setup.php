@@ -124,24 +124,29 @@ class Theme_Setup {
 		add_theme_support( 'customize-selective-refresh-widgets' );
 		add_theme_support( 'editor-color-palette', array(
 			array(
-				'name' => __( 'strong magenta', 'dunn' ),
-				'slug' => 'strong-magenta',
-				'color' => '#a156b4',
+				'name' => __( 'Dunn Red', 'dunn' ),
+				'slug' => 'dunn-red',
+				'color' => '#a8022e',
 			),
 			array(
-				'name' => __( 'light grayish magenta', 'dunn' ),
-				'slug' => 'light-grayish-magenta',
-				'color' => '#d0a5db',
+				'name' => __( 'Black', 'dunn' ),
+				'slug' => 'black',
+				'color' => '#000000',
 			),
 			array(
-				'name' => __( 'very light gray', 'dunn' ),
-				'slug' => 'very-light-gray',
-				'color' => '#eee',
+				'name' => __( 'light gray', 'dunn' ),
+				'slug' => 'light-gray',
+				'color' => '#eaeaea',
 			),
 			array(
-				'name' => __( 'very dark gray', 'dunn' ),
-				'slug' => 'very-dark-gray',
-				'color' => '#444',
+				'name' => __( 'gray', 'dunn' ),
+				'slug' => 'gray',
+				'color' => '#b8b8b8',
+			),
+			array(
+				'name' => __( 'Dark Gray', 'dunn' ),
+				'slug' => 'dark-gray',
+				'color' => '#333333',
 			),
 		) );
 		add_theme_support( 'html5', array(

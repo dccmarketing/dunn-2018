@@ -1,0 +1,8 @@
+.wp-block-button {
+	margin-bottom	: $size__default-bot-marg;
+	text-align		: center;
+
+	.wp-block-button__link {
+		@extend button;
+	}
+}

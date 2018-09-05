@@ -29,7 +29,7 @@ class Blocks {
 	} // hooks()
 
 	/**
-	 * Adds the video ID as the ID attribute on the iframe
+	 * Register block templates.
 	 *
 	 * @hooked 		init
 	 */

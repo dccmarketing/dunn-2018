@@ -5,8 +5,13 @@
 @import "main-menu/current-menu-item";
 
 .nav-1 {
-	display	: block;
-	width 	: 100%;
+	display 	: block;
+	grid-area 	: menu;
+
+	@include phone-down {
+		margin-bottom 	: 1em;
+		width 			: 100%;
+	}
 }
 
 .body-toggle-tablet-menu {

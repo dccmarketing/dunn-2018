@@ -1,0 +1,43 @@
+.nav-2 {
+	grid-area: menu;
+	margin: 1em 0;
+}
+
+.footer-menu-items {
+	@include resetlist;
+
+	@include tablet-portrait-up {
+		display 		: flex;
+		flex-wrap 		: wrap;
+		justify-content : space-between;
+	}
+}
+
+.footer-menu-item-0 {
+
+	flex: 1 1 auto;
+	position: relative;
+	text-align: center;
+
+	@include tablet-portrait-up {
+		padding: 0 0.5em;
+	}
+
+	@include tablet-to-laptop {
+		flex: 1 1 33%;
+	}
+
+	@include laptop-up {
+		& + & {
+			border-left : solid 1px $light_gray;
+		}
+	}
+}
+
+.footer-menu-item-link {
+	display: block;
+
+	@include tablet-down {
+		min-height: 44px;
+	}
+}
