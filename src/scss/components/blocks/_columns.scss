@@ -1,7 +1,22 @@
 .wp-block-columns {
+	flex-direction: column;
+
+	@include tablet-landscape-up {
+		flex-direction: row;
+	}
+
 	.wp-block-column {
 		p {
 
+		}
+
+		& + .wp-block-column {
+			margin-top: 3rem;
+			
+			@include tablet-landscape-up {
+				margin-left: 3rem;
+				margin-top: 0;
+			}
 		}
 	}
 	

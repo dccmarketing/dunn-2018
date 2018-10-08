@@ -40,10 +40,6 @@ msgstr ""
 msgid "Menu"
 msgstr ""
 
-#: page_full-width.php:3
-msgid "Full Width"
-msgstr ""
-
 #. translators: %s: search query.
 #: search.php:20
 msgid "Search Results for: %s"

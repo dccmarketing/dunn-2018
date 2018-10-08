@@ -1,0 +1,12 @@
+@mixin maxcontent() {
+	margin 			: 0 auto 1.5em;
+	padding-left 	: 1.5rem;
+	padding-right 	: 1.5rem;
+	width 			: 100%;
+
+	@include content-pad-up {
+		padding-left 	: 0;
+		padding-right 	: 0;
+		width 			: 60rem;
+	}
+}

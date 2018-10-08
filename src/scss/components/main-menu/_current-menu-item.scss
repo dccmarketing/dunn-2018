@@ -3,19 +3,19 @@
  */
 .current-menu-1-item {
 	@include tablet-portrait-up {
-		background-color: $med_gray;
+		background-color: $gray;
 	}
 }
 
 .current-menu-1-item-link {
-	color: $gray;
+	color: $light_gray;
 	
 	&:visited {
-		color: $gray;
+		color: $light_gray;
 	}
 	
 	&:hover {
-		color: $red;
+		color: $light_gray;
 	}
 }
 

@@ -8,7 +8,7 @@
  */
 
 ?><article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="page-header content-page <?php if ( has_post_thumbnail( get_the_ID() ) ) { echo 'has-featured-image'; } ?>"><?php
+	<header class="page-header content-page <?php if ( has_post_thumbnail( get_the_ID() ) ) { echo 'featured-image-page-header'; } ?>"><?php
 
 		the_post_thumbnail( 'full' );
 

@@ -11,7 +11,26 @@
 	grid-template-areas: "header header" "breadcrumbs breadcrumbs" "sidebar content" "footer footer";
 }
 
-.has-featured-image {
+.page-header {
+	@include maxcontent;
+
+	.page-title {
+		color 		: $red;
+		font-size 	: 1.5em;
+		width 		: 100%;
+
+		@include large-mobile-up {
+			font-size: 2em;
+		}
+
+		@include content-pad-down {
+			padding-left 	: 1.5rem;
+			padding-right 	: 1.5rem;
+		}
+	}
+}
+
+.featured-image-page-header {
 	align-items 		: center;
 	display 			: flex;
 	justify-content 	: center;
@@ -29,9 +48,21 @@
 	}
 
 	.page-title {
-		color 		: $light_gray;
-		position 	: absolute;
-		z-index 	: 1;
+		background-color: rgba( $dark, 0.5 );
+		border 			: 1px solid;
+		color 			: $light_gray;
+		font-weight 	: 400;
+		left 			: 50%;
+		margin 			: 0;
+		max-width 		: $bp__tablet;
+		padding 		: 0.25em;
+		position 		: absolute;
+		text-align 		: center;
+		text-transform 	: uppercase;
+		top 			: 50%;
+		transform 		: translate(-50%,-50%);
+		width 			: calc( 100% - 3rem );
+		z-index 		: 1;
 	}
 
 	&:before {
@@ -56,22 +87,19 @@
 	margin-bottom: 1.5em;
 }
 
+.type-page {
+	&:not(.has-post-thumbnail) {
+		margin-top 		: 3em;
+	}
+}
+
 .page-content,
 .entry-content,
 .entry-summary {
 	margin-bottom 	: 1.5em;
 
 	> * {
-		margin 			: 0 auto 1.5em;
-		padding-left 	: 1.5rem;
-		padding-right 	: 1.5rem;
-		width 			: 100%;
-
-		@include content-pad-up {
-			padding-left 	: 0;
-			padding-right 	: 0;
-			width 			: 60rem;
-		}
+		@include maxcontent;
 	}
 
 	> .alignfull {
@@ -80,8 +108,8 @@
 		width 			: 100%;
 
 		&.wp-block-latest-posts {
-			padding-left 	: 1.5em;
-			padding-right 	: 1.5em;
+			padding-left 	: 1.5rem;
+			padding-right 	: 1.5rem;
 		}
 	}
 
@@ -90,8 +118,8 @@
 		width 		: 100%;
 
 		&.wp-block-latest-posts {
-			padding-left 	: 1.5em;
-			padding-right 	: 1.5em;
+			padding-left 	: 1.5rem;
+			padding-right 	: 1.5rem;
 		}
 	}
 
@@ -103,8 +131,8 @@
 		.wp-block-code,
 		.wp-block-verse,
 		.wp-block-preformatted {
-			padding-left 	: 1.5em;
-			padding-right 	: 1.5em;
+			padding-left 	: 1.5rem;
+			padding-right 	: 1.5rem;
 		}
 	}
 }
@@ -119,4 +147,8 @@
 
 body.sticky {
 	display: grid !important;
+}
+
+.entry-footer {
+	@include maxcontent;
 }

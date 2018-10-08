@@ -11,6 +11,16 @@
 	transition 		: $trans__default;
 	white-space 	: nowrap;
 
+	&:focus {
+		outline-color: $red;
+	}
+
+	&:focus,
+	&:active,
+	&:visited {
+		color: $gray;
+	}
+
 	@include laptop-down {
 		justify-content	: space-between;
 	}
@@ -26,16 +36,6 @@
 			background-color: $red;
 			color: $light_gray;
 		}
-	}
-
-	&:focus {
-		outline-color: $red;
-	}
-
-	&:focus,
-	&:active,
-	&:visited {
-		color: $gray;
 	}
 }
 

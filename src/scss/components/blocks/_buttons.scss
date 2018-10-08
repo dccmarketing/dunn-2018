@@ -3,6 +3,9 @@
 	text-align		: center;
 
 	.wp-block-button__link {
-		@extend button;
+		border 			: 1px solid;
+		border-radius 	: 0.25em;
+		padding 		: 0.25em 1em;
+		text-transform 	: uppercase;
 	}
 }
