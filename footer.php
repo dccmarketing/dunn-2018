@@ -9,7 +9,8 @@
  * @package Dunn
  */
 
-	?><footer class="site-footer" id="colophon"><?php
+	?><footer class="site-footer" id="colophon">
+		<div class="footer-wrap"><?php
 
 		the_custom_logo();
 
@@ -22,7 +23,7 @@
 
 		get_template_part( 'template-parts/menu', 'social' );
 
-	?></footer><!-- .site-footer --><?php 
+	?></div></footer><!-- .site-footer --><?php 
 
 	wp_footer(); 
 

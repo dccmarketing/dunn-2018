@@ -31,8 +31,9 @@
 	@include resetbutton();
 
 	cursor 		: pointer;
+	height 		: 44px;
 	line-height	: 1.5;
-	width 		: 2em;
+	width 		: 44px;
 
 	@include laptop-up {
 		display: none;

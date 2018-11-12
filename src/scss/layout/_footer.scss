@@ -1,12 +1,16 @@
 .site-footer {
-	align-items 			: center;
-	background-color 		: $dark;
-	color 					: $light_gray;
-	display 				: flex;
-	flex-direction 			: column;
-	grid-area				: footer;
-	padding 				: 2em;
-	width 					: 100%;
+	background-color: $dark;
+	grid-area		: footer;
+}
+
+.footer-wrap {
+	align-items 	: center;
+	color 			: $light_gray;
+	display 		: flex;
+	flex-direction 	: column;
+	margin 			: 0 auto;
+	padding 		: 2em;
+	width 			: $content_width;
 
 	@include tablet-portrait-up {
 		display 				: grid;

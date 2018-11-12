@@ -9,35 +9,31 @@
 	@include tablet-portrait-up {
 		display 		: flex;
 		flex-wrap 		: wrap;
-		justify-content : space-between;
 	}
 }
 
 .footer-menu-item-0 {
-
-	flex: 1 1 auto;
-	position: relative;
-	text-align: center;
+	&:first-child .footer-menu-item-link {
+		padding-right: 2vw;
+	}
 
 	@include tablet-portrait-up {
-		padding: 0 0.5em;
-	}
-
-	@include tablet-to-laptop {
-		flex: 1 1 33%;
-	}
-
-	@include laptop-up {
 		& + & {
-			border-left : solid 1px $light_gray;
+			border-left: solid 1px $light_gray;
+
+			.footer-menu-item-link {
+				padding: 0 2vw;
+			}
 		}
 	}
 }
 
 .footer-menu-item-link {
-	display: block;
+	align-items: center;
+	display: flex;
 
 	@include tablet-down {
 		min-height: 44px;
+		min-width: 44px;
 	}
 }

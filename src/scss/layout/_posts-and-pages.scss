@@ -114,7 +114,7 @@
 	}
 
 	> .alignwide {
-		max-width 	: calc(60rem + 12.5%);
+		max-width 	: calc($content_width + 12.5%);
 		width 		: 100%;
 
 		&.wp-block-latest-posts {

@@ -22,6 +22,7 @@
 	}
 
 	@include laptop-down {
+		min-height: 44px;
 		justify-content	: space-between;
 	}
 
@@ -45,11 +46,12 @@
 	}
 
 	@include tablet-to-laptop {
-		color: $med_gray;
+		color: $light_gray;
 
 		&:hover,
 		&:focus,
-		&:active {
+		&:active,
+		&:visited {
 			color: $light_gray;
 		}
 	}

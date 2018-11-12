@@ -4,6 +4,11 @@
 
 .social-menu-items {
 	@include resetlist();
+
+	@include tablet-portrait-up {
+		align-items: center;
+		display: flex;
+	}
 }
 
 .social-menu-item {

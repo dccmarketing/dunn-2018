@@ -1,5 +1,7 @@
+@import "tools/vars";
+
 .wp-block {
-	max-width: 60rem;
+	max-width: $content_width;
 
 	&[data-align=wide] {
 		max-width: 72rem;
