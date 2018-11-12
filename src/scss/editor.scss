@@ -1,0 +1,11 @@
+.wp-block {
+	max-width: 60rem;
+
+	&[data-align=wide] {
+		max-width: 72rem;
+	}
+
+	&[data-align=full] {
+		max-width: inherit;
+	}
+}

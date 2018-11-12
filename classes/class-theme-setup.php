@@ -149,6 +149,7 @@ class Theme_Setup {
 				'color' => '#333333',
 			),
 		) );
+		add_theme_support( 'editor-styles' );
 		add_theme_support( 'html5', array(
 			'search-form',
 			'comment-form',
@@ -158,6 +159,8 @@ class Theme_Setup {
 		) );
 		add_theme_support( 'post-thumbnails' );
 		add_theme_support( 'title-tag' );
+
+		add_editor_style( 'editor.css' );
 
 	} // theme_supports()
 
