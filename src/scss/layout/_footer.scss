@@ -10,7 +10,7 @@
 	flex-direction 	: column;
 	margin 			: 0 auto;
 	padding 		: 2em;
-	width 			: $content_width;
+	max-width 		: $content_width;
 
 	@include tablet-portrait-up {
 		display 				: grid;

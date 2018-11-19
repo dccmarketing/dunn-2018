@@ -1,40 +1,17 @@
 .home {
-	h1 {
-		display: none;
-	}
-
-	.page-content > h2 {
-		align-items 	: center;
-		background-color: $light_gray;
-		border 			: 1px solid $red;
-		color 			: $red;
-		display 		: flex;
-		font-size 		: 1em;
-		justify-content : center;
-		margin 			: 0 auto 1.5em;
-		padding 		: 0.25em 1em;
-		position 		: relative;
-		text-align 		: center;
-		text-transform 	: uppercase;
-		width 			: fit-content;
-
-		&:before {
-			background-color: $red;
-			content 		: "";
-			height 			: 1px;
-			max-width 		: $content_width;
-			position 		: absolute;
-			top 			: 50%;
-			width 			: 100vw;
-			z-index 		: -1;
-		}
-	}
-
 	.hero__heading {
 		background-color: rgba($dark,0.5);
 		border 			: 1px solid;
 		font-weight 	: 400;
 		text-transform 	: uppercase;
+	}
+
+	.page {
+		margin-top: 0 !important;
+	}
+
+	.page-header {
+		display: none;
 	}
 
 	.hero__button {
@@ -49,9 +26,35 @@
 	}
 
 	.horizontal-feature__button {
-		
 		border 			: 1px solid;
 		padding 		: 0.25em 1em;
 		text-transform 	: uppercase;
+	}
+
+	.heading-lines-behind {
+		align-items 	: center;
+		background-color: $light_gray;
+		border 			: 1px solid $red;
+		color 			: $red;
+		display 		: flex;
+		font-size 		: 1em;
+		justify-content : center;
+		margin 			: 0 auto 1.5em;
+		padding 		: 0.25em 1em;
+		position 		: relative;
+		text-align 		: center;
+		text-transform 	: uppercase;
+		width 			: fit-content;
+	
+		&:before {
+			background-color: $red;
+			content 		: "";
+			height 			: 1px;
+			max-width 		: $content_width;
+			position 		: absolute;
+			top 			: 50%;
+			width 			: 100vw;
+			z-index 		: -1;
+		}
 	}
 }
