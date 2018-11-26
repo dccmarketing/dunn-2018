@@ -15,12 +15,6 @@
 		outline-color: $red;
 	}
 
-	&:focus,
-	&:active,
-	&:visited {
-		color: $gray;
-	}
-
 	@include laptop-down {
 		min-height: 44px;
 		justify-content	: space-between;
