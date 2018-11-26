@@ -80,7 +80,11 @@
 			endif;
 
 		?></div><!-- .site-branding -->
-		<nav id="site-navigation" class="nav-1">
+		<address class="address"><?php echo get_theme_mod( 'company_address' ); ?></address><?php
+
+		get_template_part( 'template-parts/button', 'cta' );
+
+		?><nav id="site-navigation" class="nav-1">
 			<button class="menu-1-toggle" aria-controls="menu-1" aria-expanded="false"><?php esc_html_e( 'Menu', 'dunn' ); ?></button><?php
 
 				$menu_args['menu_id'] 			= 'menu-1';
@@ -92,8 +96,5 @@
 
 				wp_nav_menu( $menu_args );
 
-		?></nav><!-- #site-navigation --><?php
-
-		get_template_part( 'template-parts/button', 'cta' );
-
-	?></header><!-- #masthead -->
+		?></nav><!-- #site-navigation -->
+	</header><!-- #masthead -->

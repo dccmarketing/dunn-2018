@@ -3,6 +3,10 @@
 
 	.site-header & {
 		margin-bottom: 1em;
+
+		@include tablet-portrait-up {
+			margin-bottom: 0;
+		}
 	}
 }
 

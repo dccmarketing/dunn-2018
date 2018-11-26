@@ -2,25 +2,33 @@
 	// DO NOT ADD PADDING HERE! - it screws up menus
 	align-items 	: center;
 	display 		: flex;
+	flex-direction 	: column;
 	grid-area		: header;
+	grid-gap 		: 1em;
+	margin 			: 0 auto;
 	overflow 		: auto;
-
-	@include phone-down {
-		flex-direction 	: column;
-	}
-
-	@include tablet-portrait-up {
-		justify-content : space-around;
-	}
 
 	@include tablet-portrait-up {
 		display 			: grid;
-		grid-template-areas : "logo menu" "logo phone";
+		grid-template-areas : "logo address" "logo phone" "logo menu";
 		overflow 			: visible;
 	}
 
-	@include laptop-up {
-		grid-template-areas: "logo menu phone";
+	@include adminbar-up {
+		grid-template-areas : "logo address phone" "logo menu menu";
+	}
+
+	@include content-pad-up {
+		width: 60rem;
+	}
+
+	address {
+		grid-area: address;
+		margin-bottom: 1em;
+
+		@include tablet-portrait-up {
+			margin-bottom: 0;
+		}
 	}
 }
 
