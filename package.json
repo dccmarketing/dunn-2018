@@ -16,7 +16,9 @@
     "url": "https://github.com/dccmarketing/dunn-2018/issues"
   },
   "homepage": "https://github.com/dccmarketing/dunn-2018#readme",
-  "dependencies": {},
+  "dependencies": {
+    "natives": "^1.1.6"
+  },
   "devDependencies": {
     "browser-sync": "^2.24.6",
     "event-stream": "^3.3.4",

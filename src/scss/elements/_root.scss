@@ -9,7 +9,7 @@ html {
 }
 
 body {
-	background 				: $light_gray; /* Fallback for when there is no custom background color defined. */
+	background 				: $light; /* Fallback for when there is no custom background color defined. */
 	display 				: grid;
 	grid-template-columns	: auto;
 	left 					: 0;
