@@ -21,5 +21,4 @@ endwhile; // End of the loop.
 
 ?></main><!-- #main --><?php
 
-get_sidebar();
 get_footer();

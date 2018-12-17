@@ -3,8 +3,11 @@
 .post-navigation {
 
 	main & {
-		margin	: 0 0 $size__default-bot-marg;
-		overflow: hidden;
+		margin			: 0 auto $size__default-bot-marg;
+		overflow 		: hidden;
+		padding-left 	: 0;
+		padding-right 	: 0;
+		width 			: $content_width;
 	}
 
 	.nav-links {
@@ -13,10 +16,20 @@
 
 	.nav-previous {
 		flex: 1 0 50%;
+
+		&:before {
+			content 	: "<";
+			margin-right: 0.5em;
+		}
 	}
 
 	.nav-next {
 		flex 		: 1 0 50%;
 		text-align 	: end;
+
+		&:after {
+			content 	: ">";
+			margin-left : 0.5em;
+		}
 	}
 }

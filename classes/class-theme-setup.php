@@ -28,7 +28,6 @@ class Theme_Setup {
 		add_action( 'init', 		array( $this, 'theme_supports' ) );
 		add_action( 'init', 		array( $this, 'register_menus' ) );
 		add_action( 'init', 		array( $this, 'content_width' ), 0 );
-		add_action( 'widgets_init', array( $this, 'widgets_init' ) );	
 		add_action( 'init', 		array( $this, 'disable_emojis' ) );
 
 	} // hooks()
@@ -163,25 +162,5 @@ class Theme_Setup {
 		add_editor_style( 'editor.css' );
 
 	} // theme_supports()
-
-	/**
-	 * Register widget areas.
-	 *
-	 * @hooked 		widgets_init
-	 * @link 		https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
-	 */
-	public function widgets_init() {
-
-		register_sidebar( array(
-			'name'          => esc_html__( 'Sidebar', 'dunn' ),
-			'id'            => 'sidebar',
-			'description'   => esc_html__( 'Add widgets here.', 'dunn' ),
-			'before_widget' => '<section id="%1$s" class="widget %2$s">',
-			'after_widget'  => '</section>',
-			'before_title'  => '<h2 class="widget-title">',
-			'after_title'   => '</h2>',
-		) );
-
-	} // widgets_init()
 
 } // class

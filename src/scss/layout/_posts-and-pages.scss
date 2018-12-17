@@ -1,5 +1,6 @@
 .page-template-page_full-width,
-.page-template-default {
+.page-template-default,
+.casestudy-template-default {
 	grid-template-areas: "header" "breadcrumbs" "content" "footer";
 }
 
@@ -11,10 +12,12 @@
 	grid-template-areas: "header header" "breadcrumbs breadcrumbs" "sidebar content" "footer footer";
 }
 
-.page-header {
+.page-header,
+.entry-header {
 	@include maxcontent;
 
-	.page-title {
+	.page-title,
+	.entry-title {
 		color 		: $red;
 		font-size 	: 1.5em;
 		width 		: 100%;
@@ -47,7 +50,8 @@
 		width: 100%;
 	}
 
-	.page-title {
+	.page-title,
+	.post-title {
 		background-color: rgba( $dark, 0.5 );
 		border 			: 1px solid;
 		color 			: $light_gray;
