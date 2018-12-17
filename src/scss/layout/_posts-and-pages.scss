@@ -1,6 +1,9 @@
 .page-template-page_full-width,
 .page-template-default,
-.casestudy-template-default {
+.casestudy-template-default,
+.post-template-default,
+.archive,
+.block-editor-layout {
 	grid-template-areas: "header" "breadcrumbs" "content" "footer";
 }
 
@@ -91,9 +94,9 @@
 	margin-bottom: 1.5em;
 }
 
-.type-page {
+.status-publish {
 	&:not(.has-post-thumbnail) {
-		margin-top 		: 3em;
+		margin-top: 3em;
 	}
 }
 
@@ -138,6 +141,11 @@
 			padding-left 	: 1.5rem;
 			padding-right 	: 1.5rem;
 		}
+	}
+
+	.widget {
+		margin-left: auto;
+		margin-right: auto;
 	}
 }
 

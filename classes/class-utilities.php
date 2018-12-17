@@ -109,6 +109,8 @@ class Utilities {
 
 		}
 
+		$classes[] = 'block-editor-layout';
+
 		return $classes;
 
 	} // page_body_classes()
