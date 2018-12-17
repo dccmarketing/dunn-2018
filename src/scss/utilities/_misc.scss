@@ -5,3 +5,39 @@
 		text-transform: uppercase;
 	}
 }
+
+.heading-lines-behind {
+	align-items 	: center;
+	background-color: $light;
+	border 			: 1px solid $red;
+	color 			: $red;
+	display 		: flex;
+	font-size 		: 1em;
+	justify-content : center;
+	line-height 	: 1.25;
+	margin 			: 0 auto 1.5em;
+	padding 		: 0.25em 1em;
+	position 		: relative;
+	text-align 		: center;
+	text-transform 	: uppercase;
+	width 			: $lined_heading_width;
+
+	&:before,
+	&:after {
+		background-color: $red;
+		content 		: "";
+		height 			: 1px;
+		max-width 		: calc( ( #{ $content_width } / 2 ) - ( #{ $lined_heading_width } / 2 ) );
+		position 		: absolute;
+		top 			: 50%;
+		width 			: 100vw;
+	}
+
+	&:before {
+		left: 100%;
+	}
+
+	&:after {
+		right: 100%;
+	}
+}
