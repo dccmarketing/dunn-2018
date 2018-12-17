@@ -1,0 +1,21 @@
+.faq-toggle {
+	margin-left: 1em
+}
+
+.schema-faq-question {
+	background-color: $light_gray;
+	border-bottom: 1px solid white;
+	display: flex;
+	justify-content: space-between;
+	padding: 0.5em;
+	text-transform: uppercase;
+	width: 100%;
+}
+
+.schema-faq-answer {
+	padding: 0.5em;
+
+	&:not(.visible) {
+		display: none;
+	}
+}
