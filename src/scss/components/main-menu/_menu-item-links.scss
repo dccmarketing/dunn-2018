@@ -35,7 +35,7 @@
 }
 
 .menu-1-item-link-1 { // 2nd-level menu item link, first submenu
-	@include laptop-down {
+	@include tablet-down {
 		padding-left: 2em;
 	}
 
@@ -52,7 +52,7 @@
 }
 
 .menu-1-item-link-2 { // 3rd-level menu item link, second submenu
-	@include laptop-down {
+	@include tablet-down {
 		border-left : none;
 		padding-left: 3em;
 	}

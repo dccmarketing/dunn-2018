@@ -81,17 +81,7 @@ class Menu_Utilities {
 
 		$output = '';
 		$output .= $title;
-
-		if ( 0 === $depth ) {
-
-			$output .= '<span class="menu-1-submenu-icon triangle-down"></span>';
-
-		} else {
-
-			$output .= '<span class="menu-1-submenu-icon triangle-right"></span>';
-
-		}
-
+		$output .= '<span class="menu-1-submenu-icon triangle-down"></span>';
 		$output .= '<button class="menu-1-submenu-toggle">+</button>';
 
 		return $output;

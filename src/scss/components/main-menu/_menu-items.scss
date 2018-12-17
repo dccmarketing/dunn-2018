@@ -2,14 +2,13 @@
  * Menu Items.
  */
 .menu-1-item { // Every menu item
-	position: relative;
+	//position: relative;
 
 	&:hover,
 	&.focus {
 
 		> ul {
 			@include tablet-portrait-up {
-				left 		: auto;
 				opacity 	: 1;
 				visibility 	: visible;
 			}
@@ -61,26 +60,9 @@
 
 		> ul {
 			@include tablet-portrait-up {
-				left 	: 100%;
-				top 	: 0;
+				left 	: 0;
+				top 	: 100%;
 			}
-		}
-	}
-}
-
-.menu-1-item-1-has-children {
-	a {
-		margin-right: 0.75em;
-
-		&:after {
-			border 				: 5px solid transparent;
-			border-right-width	: 0;
-			border-left-color	: currentColor;
-			content 			: "";
-			height 				: 0;
-			margin 				: 0.25em 0.5em;
-			position 			: absolute;
-			width 				: 0;
 		}
 	}
 }

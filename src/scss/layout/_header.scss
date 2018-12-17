@@ -5,12 +5,12 @@
 	flex-direction 	: column;
 	grid-area		: header;
 	grid-gap 		: 1em;
-	margin 			: 0 auto;
 	overflow 		: auto;
 
 	@include tablet-portrait-up {
 		display 			: grid;
 		grid-template-areas : "logo address" "logo phone" "logo menu";
+		margin 				: 0 auto;
 		overflow 			: visible;
 	}
 
