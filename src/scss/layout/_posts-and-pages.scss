@@ -34,10 +34,10 @@
 			padding-right 	: 1.5rem;
 		}
 	}
+}
 
-	.category & {
-		margin-top: 3em;
-	}
+.category .page-header {
+	margin-top: 3em;
 }
 
 .featured-image-page-header {
@@ -98,7 +98,7 @@
 	margin-bottom: 1.5em;
 }
 
-.status-publish {
+article {
 	&:not(.has-post-thumbnail) {
 		margin-top: 3em;
 	}
@@ -171,4 +171,20 @@ body.sticky {
 
 .memberships .page-content a {
 	@include unline( $dark, $red );
+}
+
+.archive,
+.search-results {
+	article {
+		margin-left: auto;
+		margin-right: auto;
+		max-width: 62rem;
+		padding-left: 1em;
+		padding-right: 1em;
+
+		&:nth-child(even) {
+			background-color: $light_gray;
+			border: 1px solid;
+		}
+	}
 }
