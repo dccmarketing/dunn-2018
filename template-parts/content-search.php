@@ -23,7 +23,6 @@
 			?><div class="entry-meta"><?php
 
 				dunn_posted_on();
-				dunn_posted_by();
 			
 			?></div><!-- .entry-meta --><?php 
 			
