@@ -14,8 +14,9 @@
 
 		the_custom_logo();
 
-		?><div class="copyright">&copy; <?php echo date( 'Y' ); ?> <a href="<?php echo esc_url( get_admin_url() ); ?>"><?php echo get_bloginfo( 'name' ); ?></a></div>
-		<address class="address"><?php echo get_theme_mod( 'company_address' ); ?></address><?php
+		?><div class="copyright">&copy; <?php echo date( 'Y' ); ?> <a href="<?php echo esc_url( get_admin_url() ); ?>"><?php echo get_bloginfo( 'name' ); ?></a></div><?php
+
+		get_template_part( 'template-parts/content', 'address' );
 
 		get_template_part( 'template-parts/menu', 'footer' );
 

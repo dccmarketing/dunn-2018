@@ -79,8 +79,9 @@
 
 			endif;
 
-		?></div><!-- .site-branding -->
-		<address class="address"><?php echo get_theme_mod( 'company_address' ); ?></address><?php
+		?></div><!-- .site-branding --><?php
+
+		get_template_part( 'template-parts/content', 'address' );
 
 		get_template_part( 'template-parts/button', 'cta' );
 

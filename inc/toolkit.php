@@ -16,3 +16,23 @@ function dunn_format_phone_number( $number ) {
 	return $formatted;
 
 } // dunn_format_phone_number()
+
+/**
+ * Returns a Google Map link from an address
+ *
+ * @exits 		If $address is empty.
+ * @param 		string 		$address 		An address
+ * @return 		string 						URL for Google Maps
+ */
+function dunn_make_map_link( $address ) {
+
+	if( empty( $address ) ) { return FALSE; }
+
+	$return = '';
+
+	$query_args['q'] 	= urlencode( $address );
+	$return 			= add_query_arg( $query_args, 'https://www.google.com/maps/' );
+
+	return $return;
+
+} // dunn_make_map_link()
