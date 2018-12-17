@@ -56,9 +56,7 @@
 	ul { // all the submenus
 		@include laptop-up {
 			box-shadow 		: 0 3px 3px rgba($gray, 0.2);
-			display 		: flex;
-			flex-wrap 		: wrap;
-			justify-content : inherit;
+			display 		: block;
 			left 			: 0;
 			opacity 		: 0;
 			position 		: absolute;
@@ -82,7 +80,7 @@
 	
 	@include tablet-portrait-up {
 		left: 100%;
-		top	: 0;
+		top	: 100%;
 	}
 
 	@include tablet-to-laptop {
