@@ -14,7 +14,7 @@
 
 .footer-menu-item-0 {
 	&:first-child .footer-menu-item-link {
-		padding-right: 2vw;
+		padding-right: 0.5em;
 	}
 
 	@include tablet-portrait-up {
@@ -22,7 +22,7 @@
 			border-left: solid 1px $light_gray;
 
 			.footer-menu-item-link {
-				padding: 0 2vw;
+				padding: 0 0.5em;
 			}
 		}
 	}
