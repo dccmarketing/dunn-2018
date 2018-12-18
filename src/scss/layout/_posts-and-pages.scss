@@ -188,3 +188,7 @@ body.sticky {
 		}
 	}
 }
+
+.case-study a {
+	@include unline( $dark, $red );
+}
