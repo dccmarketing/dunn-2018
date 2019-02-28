@@ -22,16 +22,14 @@
 
 		if ( 'post' === get_post_type() ) :
 			
-			?><div class="entry-meta"><?php
-				
-				dunn_posted_on();
-				
-			?></div><!-- .entry-meta --><?php 
+			?><?php 
 			
 		endif; 
 		
 	?></header><!-- .entry-header -->
-	<div class="entry-content"><?php
+	<div class="entry-content"><div class="entry-meta">
+				<strong><?php the_date(); ?></strong>
+			</div><!-- .entry-meta --><?php
 
 		the_content( sprintf(
 			wp_kses(
